@@ -12,6 +12,7 @@ RDEPENDS:${PN}:append:beaglebone-yocto = " u-boot-env"
 RDEPENDS:${PN}:append:beaglebone = " u-boot-bb.org-env"
 RDEPENDS:${PN}:append:pocketbeagle2 = " u-boot-bb.org-env"
 RDEPENDS:${PN}:append:beaglebone-ai64 = " u-boot-bb.org-env"
+RDEPENDS:${PN}:append:beagleplay-ti = " u-boot-bb.org-env"
 
 inherit systemd
 
@@ -26,6 +27,7 @@ DATADEV:beaglebone-yocto = "mmcblk0"
 DATADEV:beaglebone = "mmcblk0"
 DATADEV:pocketbeagle2 = "mmcblk1"
 DATADEV:beaglebone-ai64 = "mmcblk1"
+DATADEV:beagleplay-ti = "mmcblk1"
 
 do_install:append() {
 	sed -i "s/@@DATADEV@@/${DATADEV}/g" ${UNPACKDIR}/grow-data-partition.sh

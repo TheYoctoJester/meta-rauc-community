@@ -9,6 +9,13 @@ SRC_URI:append:pocketbeagle2 = "  \
     file://boot.cmd \
 "
 
+# BeaglePlay (AM625), bb_org BSP. Same AM62x layout as PocketBeagle 2
+# (mmc 1, /boot uboot.env), so the PocketBeagle 2 files apply unchanged.
+SRC_URI:append:beagleplay-ti = "  \
+    file://fw_env.config \
+    file://boot.cmd \
+"
+
 SRC_URI:append:beaglebone-ai64 = "  \
     file://fw_env.config \
     file://boot.cmd \
@@ -29,6 +36,8 @@ UBOOT_ENV_SUFFIX:pocketbeagle2 = "scr"
 UBOOT_ENV:pocketbeagle2 = "boot"
 UBOOT_ENV_SUFFIX:beaglebone-ai64 = "scr"
 UBOOT_ENV:beaglebone-ai64 = "boot"
+UBOOT_ENV_SUFFIX:beagleplay-ti = "scr"
+UBOOT_ENV:beagleplay-ti = "boot"
 
 do_install_fw_env_config() {
     install -d ${D}${sysconfdir}
@@ -44,5 +53,9 @@ do_install:append:pocketbeagle2() {
 }
 
 do_install:append:beaglebone-ai64() {
+    do_install_fw_env_config
+}
+
+do_install:append:beagleplay-ti() {
     do_install_fw_env_config
 }
