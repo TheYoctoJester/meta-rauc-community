@@ -3,7 +3,7 @@ WKS_FILE:beaglebone-yocto = "beaglebone-yocto-dual.wks.in"
 WKS_FILE:beaglebone = "beaglebone-yocto-dual.wks.in"
 WKS_FILE:pocketbeagle2 = "sdimage-2part-efi-dual.wks.in"
 WKS_FILE:beaglebone-ai64 = "sdimage-2part-efi-dual.wks.in"
-WKS_FILE:beagleplay-ti = "sdimage-2part-efi-dual.wks.in"
+WKS_FILE:beagleplay = "sdimage-2part-efi-dual.wks.in"
 IMAGE_BOOT_FILES += "boot.scr"
 
 # Optimizations for RAUC adaptive method 'block-hash-index'
